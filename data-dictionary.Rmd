@@ -184,16 +184,18 @@ ahl_var_defs <- c("Age group",
 # use show_header_names to get col names being used by tbl_summary
 tbl_summary(ahl,
             missing = "ifany",
-            missing_text = "Missing") %>% 
-  modify_header(update = list(
-    label ~ 'Variable')) %>% 
-  modify_table_body(dplyr::mutate, defs = ahl_var_defs) %>% 
-  modify_header(defs = "Definition") %>% 
-  # show_header_names()
-  as_gt() %>%
-  tab_options(table.align = "left") %>% 
-  cols_align("left", vars(stat_0, defs)) %>%
-  as_raw_html()
+            missing_text = "Missing") 
+
+#%>% 
+  # modify_header(update = list(
+  #   label ~ 'Variable')) %>% 
+  # modify_table_body(dplyr::mutate, defs = ahl_var_defs) %>% 
+  # modify_header(defs = "Definition") %>% 
+  # # show_header_names()
+  # as_gt() %>%
+  # tab_options(table.align = "left") %>% 
+  # cols_align("left", vars(stat_0, defs)) %>%
+  # as_raw_html()
 
 ```
 \
@@ -238,15 +240,17 @@ tbl_summary(bvc,
             missing = "ifany",
             missing_text = "Missing") %>% 
   modify_header(update = list(
-    label ~ 'Variable')) %>% 
-  modify_table_body(dplyr::mutate, defs = bvc_var_defs) %>% 
-  modify_header(defs = "Definition") %>% 
-  # show_header_names()
-  as_gt() %>%
-  tab_options(table.align = "left") %>% 
-  cols_align("left", vars(stat_0, defs)) %>%
-  cols_width(vars(stat_0) ~ "150px") %>% 
-  as_raw_html()
+    label ~ 'Variable')) 
+
+# %>% 
+#   modify_table_body(dplyr::mutate, defs = bvc_var_defs) %>% 
+#   modify_header(defs = "Definition") %>% 
+#   # show_header_names()
+#   as_gt() %>%
+#   tab_options(table.align = "left") %>% 
+#   cols_align("left", vars(stat_0, defs)) %>%
+#   cols_width(vars(stat_0) ~ "150px") %>% 
+#   as_raw_html()
 
 ```
 \
@@ -402,17 +406,19 @@ iac_var_defs <- c("Age Group",
 # use show_header_names to get col names being used by tbl_summary
 tbl_summary(iac %>% select(-date),
             missing = "ifany",
-            missing_text = "Missing") %>% 
-  modify_header(update = list(
-    label ~ 'Variable')) %>% 
-  modify_table_body(dplyr::mutate, defs = iac_var_defs) %>% 
-  modify_header(defs = "Definition") %>% 
-  # show_header_names()
-  as_gt() %>%
-  tab_options(table.align = "left") %>% 
-  cols_align("left", vars(stat_0, defs)) %>%
-  cols_width(vars(stat_0) ~ px(190)) %>% 
-  as_raw_html()
+            missing_text = "Missing") 
+# 
+# %>% 
+#   modify_header(update = list(
+#     label ~ 'Variable')) %>% 
+#   modify_table_body(dplyr::mutate, defs = iac_var_defs) %>% 
+#   modify_header(defs = "Definition") %>% 
+#   # show_header_names()
+#   as_gt() %>%
+#   tab_options(table.align = "left") %>% 
+#   cols_align("left", vars(stat_0, defs)) %>%
+#   cols_width(vars(stat_0) ~ px(190)) %>% 
+#   as_raw_html()
 
 ```
 \
@@ -455,13 +461,15 @@ irc <- read_csv("data/ind-race-complete.csv") %>%
 # use show_header_names to get col names being used by tbl_summary
 tbl_summary(irc,
             missing = "ifany",
-            missing_text = "Missing") %>% 
-  modify_header(update = list(
-    label ~ 'Variable')) %>% 
-  as_gt() %>%
-  tab_options(table.align = "left") %>% 
-  cols_align("left", vars(stat_0)) %>%
-  as_raw_html()
+            missing_text = "Missing") 
+
+# %>% 
+#   modify_header(update = list(
+#     label ~ 'Variable')) %>% 
+#   as_gt() %>%
+#   tab_options(table.align = "left") %>% 
+#   cols_align("left", vars(stat_0)) %>%
+#   as_raw_html()
 
 ```
 \
@@ -498,17 +506,19 @@ mab_var_defs <- c("Median age of cases for that week",
 # use show_header_names to get col names being used by tbl_summary
 tbl_summary(mab %>% select(-end_date),
             missing = "ifany",
-            missing_text = "Missing") %>% 
-  modify_header(update = list(
-    label ~ 'Variable')) %>% 
-  modify_table_body(dplyr::mutate, defs = mab_var_defs) %>% 
-  modify_header(defs = "Definition") %>% 
-  # show_header_names()
-  as_gt() %>%
-  tab_options(table.align = "left") %>% 
-  cols_align("left", vars(stat_0, defs)) %>%
-  cols_width(vars(stat_0) ~ px(200)) %>% 
-  as_raw_html()
+            missing_text = "Missing") 
+
+# %>% 
+#   modify_header(update = list(
+#     label ~ 'Variable')) %>% 
+#   modify_table_body(dplyr::mutate, defs = mab_var_defs) %>% 
+#   modify_header(defs = "Definition") %>% 
+#   # show_header_names()
+#   as_gt() %>%
+#   tab_options(table.align = "left") %>% 
+#   cols_align("left", vars(stat_0, defs)) %>%
+#   cols_width(vars(stat_0) ~ px(200)) %>% 
+#   as_raw_html()
 
 ```
 \
@@ -548,17 +558,19 @@ mhl_var_defs <- c("Number of individuals hospitalized for COVID-19 who died whil
 # use show_header_names to get col names being used by tbl_summary
 tbl_summary(mhl %>% select(-date),
             missing = "ifany",
-            missing_text = "Missing") %>% 
-  modify_header(update = list(
-    label ~ 'Variable')) %>% 
-  modify_table_body(dplyr::mutate, defs = mhl_var_defs) %>% 
-  modify_header(defs = "Definition") %>% 
-  # show_header_names()
-  as_gt() %>%
-  tab_options(table.align = "left") %>% 
-  cols_align("left", vars(stat_0, defs)) %>%
-  cols_width(vars(stat_0) ~ "180px") %>% 
-  as_raw_html()
+            missing_text = "Missing") 
+
+# %>% 
+#   modify_header(update = list(
+#     label ~ 'Variable')) %>% 
+#   modify_table_body(dplyr::mutate, defs = mhl_var_defs) %>% 
+#   modify_header(defs = "Definition") %>% 
+#   # show_header_names()
+#   as_gt() %>%
+#   tab_options(table.align = "left") %>% 
+#   cols_align("left", vars(stat_0, defs)) %>%
+#   cols_width(vars(stat_0) ~ "180px") %>% 
+#   as_raw_html()
 
 ```
 \
@@ -594,30 +606,31 @@ Other variables:
 \
 
 ```{r, asis=TRUE}
-
-msa_hist <- read_csv("../Indiana-COVIDcast-Dashboard/data/msa-cases100-posrate-historic.csv")
-msa_hist_var_defs <- purrr::reduce(list("Metropolitan Statistical Area",
-                                        rep("", 15),
-                                        "Daily cases per 100,000 residents per MSA",
-                                        "",
-                                        "Weekly positivity rate per MSA",
-                                        ""), append)
-
-# table width responsive to length of var_defs text, so may not appear full.width
-# use show_header_names to get col names being used by tbl_summary
-tbl_summary(msa_hist,
-            missing = "ifany",
-            missing_text = "Missing",
-            include = c(date, msa, cases_100k, pos_rate)) %>% 
-  modify_header(update = list(
-    label ~ 'Variable')) %>% 
-  modify_table_body(dplyr::mutate, defs = msa_hist_var_defs) %>%
-  modify_header(defs = "Definition") %>%
-  # show_header_names()
-  as_gt() %>%
-  tab_options(table.align = "left") %>% 
-  cols_align("left", vars(stat_0, defs)) %>%
-  as_raw_html()
+# 
+# msa_hist <- read_csv("data/msa-cases100-posrate-historic.csv")
+# msa_hist_var_defs <- purrr::reduce(list("Metropolitan Statistical Area",
+#                                         rep("", 15),
+#                                         "Daily cases per 100,000 residents per MSA",
+#                                         "",
+#                                         "Weekly positivity rate per MSA",
+#                                         ""), append)
+# 
+# # table width responsive to length of var_defs text, so may not appear full.width
+# # use show_header_names to get col names being used by tbl_summary
+# tbl_summary(msa_hist,
+#             missing = "ifany",
+#             missing_text = "Missing",
+#             include = c(date, msa, cases_100k, pos_rate)) 
+# # %>% 
+# #   modify_header(update = list(
+# #     label ~ 'Variable')) %>% 
+# #   modify_table_body(dplyr::mutate, defs = msa_hist_var_defs) %>%
+# #   modify_header(defs = "Definition") %>%
+# #   # show_header_names()
+# #   as_gt() %>%
+# #   tab_options(table.align = "left") %>% 
+# #   cols_align("left", vars(stat_0, defs)) %>%
+# #   as_raw_html()
 
 ```
 \
@@ -639,11 +652,12 @@ Processing: [process-dashboard-data.R](https://github.com/ercbk/Indiana-COVIDcas
 covidcast R package: [website](https://cmu-delphi.github.io/covidcast/covidcastR/)  
 
 #### Notes  
+
 Other variables:  
 - `time_value`: yyyy-mm-dd format; Daily
 \
 
-```{r, asis=TRUE}
+```{r, asis=TRUE, eval = FALSE}
 
 dcl <- read_rds("../Indiana-COVIDcast-Dashboard/data/dash-ci-line.rds") %>% 
   filter(name != "<<<<<<< HEAD" & name != "=======" & name != ">>>>>>> 113d96e638fcac35d736d138e77e8b5d47d9a407")
@@ -659,14 +673,17 @@ tbl_summary(dcl,
             missing = "ifany",
             missing_text = "Missing",
             include = c(name, value)) %>%
-  modify_header(update = list(label ~ 'Variable')) %>%
-  modify_table_body(dplyr::mutate, defs = dcl_var_defs) %>%
-  modify_header(defs = "Definition") %>%
-  # show_header_names()
-  as_gt() %>%
-  tab_options(table.align = "left") %>%
-  cols_align("left", vars(stat_0, defs)) %>%
-  as_raw_html()
+  modify_header(update = list(label ~ 'Variable')) 
+
+
+# %>%
+#   modify_table_body(dplyr::mutate, defs = dcl_var_defs) %>%
+#   modify_header(defs = "Definition") %>%
+#   # show_header_names()
+#   as_gt() %>%
+#   tab_options(table.align = "left") %>%
+#   cols_align("left", vars(stat_0, defs)) %>%
+#   as_raw_html()
 
 ```
 \
@@ -715,14 +732,16 @@ tbl_summary(ill,
             missing = "ifany",
             missing_text = "Missing",
             include = c(`Number of Deaths`)) %>%
-  modify_header(update = list(label ~ 'Variable')) %>%
-  modify_table_body(dplyr::mutate, defs = ill_var_defs) %>%
-  modify_header(defs = "Definition") %>%
-  # show_header_names()
-  as_gt() %>%
-  tab_options(table.align = "left") %>%
-  cols_align("left", vars(stat_0, defs)) %>%
-  as_raw_html()
+  modify_header(update = list(label ~ 'Variable'))
+
+# %>%
+#   modify_table_body(dplyr::mutate, defs = ill_var_defs) %>%
+#   modify_header(defs = "Definition") %>%
+#   # show_header_names()
+#   as_gt() %>%
+#   tab_options(table.align = "left") %>%
+#   cols_align("left", vars(stat_0, defs)) %>%
+#   as_raw_html()
 
 ```
 \
@@ -763,14 +782,16 @@ tbl_summary(ind,
             missing = "ifany",
             missing_text = "Missing",
             include = c(positives, num_tests)) %>%
-  modify_header(update = list(label ~ 'Variable')) %>%
-  modify_table_body(dplyr::mutate, defs = ind_var_defs) %>%
-  modify_header(defs = "Definition") %>%
-  # show_header_names()
-  as_gt() %>%
-  tab_options(table.align = "left") %>%
-  cols_align("left", vars(stat_0, defs)) %>%
-  as_raw_html()
+  modify_header(update = list(label ~ 'Variable')) 
+
+# %>%
+#   modify_table_body(dplyr::mutate, defs = ind_var_defs) %>%
+#   modify_header(defs = "Definition") %>%
+#   # show_header_names()
+#   as_gt() %>%
+#   tab_options(table.align = "left") %>%
+#   cols_align("left", vars(stat_0, defs)) %>%
+#   as_raw_html()
 
 ```
 \
@@ -811,15 +832,17 @@ mich_var_defs <- c("Number of COVID-19 positive tests per day per county",
 tbl_summary(mich,
             missing = "ifany",
             missing_text = "Missing",
-            include = c(positive, negative, total)) %>%
-  modify_header(update = list(label ~ 'Variable')) %>%
-  modify_table_body(dplyr::mutate, defs = mich_var_defs) %>%
-  modify_header(defs = "Definition") %>%
-  # show_header_names()
-  as_gt() %>%
-  tab_options(table.align = "left") %>%
-  cols_align("left", vars(stat_0, defs)) %>%
-  as_raw_html()
+            include = c(positive, negative, total)) 
+
+# %>%
+#   modify_header(update = list(label ~ 'Variable')) %>%
+#   modify_table_body(dplyr::mutate, defs = mich_var_defs) %>%
+#   modify_header(defs = "Definition") %>%
+#   # show_header_names()
+#   as_gt() %>%
+#   tab_options(table.align = "left") %>%
+#   cols_align("left", vars(stat_0, defs)) %>%
+#   as_raw_html()
 
 ```
 \
@@ -861,14 +884,16 @@ tbl_summary(wisc,
             missing = "ifany",
             missing_text = "Missing",
             include = c(positive, negative)) %>%
-  modify_header(update = list(label ~ 'Variable')) %>%
-  modify_table_body(dplyr::mutate, defs = wisc_var_defs) %>%
-  modify_header(defs = "Definition") %>%
-  # show_header_names()
-  as_gt() %>%
-  tab_options(table.align = "left") %>%
-  cols_align("left", vars(stat_0, defs)) %>%
-  as_raw_html()
+  modify_header(update = list(label ~ 'Variable')) 
+
+# %>%
+#   modify_table_body(dplyr::mutate, defs = wisc_var_defs) %>%
+#   modify_header(defs = "Definition") %>%
+#   # show_header_names()
+#   as_gt() %>%
+#   tab_options(table.align = "left") %>%
+#   cols_align("left", vars(stat_0, defs)) %>%
+#   as_raw_html()
 
 ```
 \
